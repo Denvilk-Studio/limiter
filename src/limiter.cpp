@@ -1,21 +1,13 @@
-#include <cstdio>
-#include <cstdlib>
-
-#include "Run.h"
-#include "Interaction.h"
-#include "Process.h"
-#include "Strings.h"
+#include "../include/limiter.h"
+#include <vector>
 
 using namespace runexe;
-using namespace std;
 
-
-int main(int argc, char *argv[]) {
-    InvocationParams invocationParams = processCommandLine(argc, argv);
+std::vector<InvocationResult> Limiter::invoke(const InvocationParams &invocationParams) {
 
     Configuration &configuration = Configuration::getConfiguration();
-    const string &interactorCommandLine = configuration.getInteractor();
-    vector<InvocationResult> results;
+    const std::string &interactorCommandLine = configuration.getInteractor();
+    std::vector<InvocationResult> results;
 
     if (!interactorCommandLine.empty()) {
         // interactive mode
@@ -38,14 +30,6 @@ int main(int argc, char *argv[]) {
             remove(outcome.error_file.c_str());
     }
 
-    if (configuration.isScreenOutput()) {
-        for (size_t i = 0; i < results.size(); ++i)
-            printInvocationResult(invocationParams, results[i]);
-    }
+    return results;
 
-    if (configuration.isXmlOutput())
-        printXmlInvocationResult(results, configuration.getXmlFileName());
-
-    return EXIT_SUCCESS;
 }
-

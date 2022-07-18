@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "Process.h"
+#include "process.h"
 
 namespace runexe {
     class InvocationParams {
@@ -13,37 +13,65 @@ namespace runexe {
 
         InvocationParams(const std::vector<std::string> &cmdLineParams);
 
+        InvocationParams();
+
         long long getTimeLimit() const;
+
+        void setTimeLimit(long long timeLimit);
 
         long long getMemoryLimit() const;
 
+        void setMemoryLimit(long long memoryLimit);
+
         std::string getRedirectInput() const;
+        
+        void setRedirectInput(const std::string &inputFilePath);
 
         std::string getRedirectOutput() const;
 
+        void setRedirectOutput(const std::string &outputFilePath);
+
         std::string getRedirectError() const;
+
+        void setRedirectError(const std::string &errorFilePath);
 
         std::string getHomeDirectory() const;
 
+        void setHomeDirectory(const std::string &homeDirectory);
+
         std::string getCommandLine() const;
+
+        void setCommandLine(const std::string &commandLine);
 
         std::string getUserName() const;
 
+        void setUserName(const std::string &userName);
+
         std::string getDomain() const;
+
+        void setDomain(const std::string &domain);
 
         std::string getPassword() const;
 
+        void setPassword(const std::string &password);
+
         std::string getInjectDll() const;
+
+        void setInjectDll(const std::string &injectDll);
 
         std::string getProgramName() const;
 
+        void setProgramName(const std::string &programName);
+
         bool isTrustedProcess() const;
+
+        void setTrustedProcess(bool isTrustedProcess);
 
         bool isIdlenessChecking() const;
 
-        ProcessParams asProcessParams() const;
+        void setIdlenessChecking(bool checkIdleness);
 
-        void setProgramName(const std::string &programName);
+        ProcessParams asProcessParams() const;
 
     private:
         long long timeLimit;
