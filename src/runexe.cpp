@@ -1,9 +1,9 @@
-#include "../include/limiter.h"
+#include "../include/runexe.h"
 #include <vector>
 
 using namespace runexe;
 
-std::vector<InvocationResult> Limiter::invoke(const InvocationParams &invocationParams) {
+std::vector<InvocationResult> invoke(const InvocationParams &invocationParams) {
 
     Configuration &configuration = Configuration::getConfiguration();
     const std::string &interactorCommandLine = configuration.getInteractor();
