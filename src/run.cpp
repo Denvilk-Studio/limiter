@@ -22,7 +22,7 @@ void runexe::showInfo() {
          << copyrightYears << endl
          << "Based on runlib by Paul P. Komkoff Jr." << endl
          << "Written by Dmitry Levshunov, Mike Mirzayanov" << endl
-         << "Modified by ultmaster, 2019" << endl
+         << "Modified by ultmaster, 2019 && Denvilk Studio, 2022" << endl
          << "Use \"runexe -h\" to get help information" << endl;
 }
 

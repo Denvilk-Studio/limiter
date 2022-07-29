@@ -15,6 +15,6 @@ set(SOURCE_FILES
     src/process.cpp 
     src/interaction.cpp)
 
-add_library(limiter STATIC ${SOURCE_FILES} src/limiter.cpp)
+add_library(limiter STATIC ${SOURCE_FILES} src/runexe.cpp)
 
 add_executable(runexe ${SOURCE_FILES} src/entrypoint.cpp)
