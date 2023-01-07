@@ -3,7 +3,7 @@
 
 using namespace runexe;
 
-std::vector<InvocationResult> invoke(const InvocationParams &invocationParams) {
+std::vector<InvocationResult> runexe::invoke(const InvocationParams &invocationParams) {
 
     Configuration &configuration = Configuration::getConfiguration();
     const std::string &interactorCommandLine = configuration.getInteractor();

@@ -15,6 +15,7 @@ set(SOURCE_FILES
     src/process.cpp 
     src/interaction.cpp)
 
-add_library(limiter STATIC ${SOURCE_FILES} src/runexe.cpp)
+add_library(runexe STATIC ${SOURCE_FILES} src/runexe.cpp)
 
-add_executable(runexe ${SOURCE_FILES} src/entrypoint.cpp)
+add_executable(runexe-bin ${SOURCE_FILES} src/entrypoint.cpp)
+set_target_properties(runexe-bin PROPERTIES OUTPUT_NAME runexe)
